@@ -1,291 +1,739 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eid Salami - OWNER OF SHADIN</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-        /* Animated Background Elements */
-        .bg-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        .shape {
-            position: absolute;
-            filter: blur(50px);
-            opacity: 0.5;
-            animation: float 6s infinite ease-in-out;
-        }
-        .shape1 { background: #ff007f; width: 300px; height: 300px; top: -100px; left: -100px; border-radius: 50%; }
-        .shape2 { background: #7928ca; width: 400px; height: 400px; bottom: -150px; right: -100px; border-radius: 50%; animation-delay: 2s; }
-        .shape3 { background: #ffaa00; width: 200px; height: 200px; top: 40%; left: 50%; border-radius: 50%; animation-delay: 4s; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔥 Eid Salami - SHADIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold2: #FFA500;
+      --gold3: #FF8C00;
+      --deep: #0a0500;
+      --fire1: #FF4500;
+      --fire2: #FF6A00;
+      --fire3: #FFB347;
+      --green: #1a6b2a;
+      --green2: #2ecc71;
+    }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.1); }
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 40px 30px;
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            animation: popup 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    body {
+      background: var(--deep);
+      font-family: 'Noto Serif Bengali', serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
 
-        @keyframes popup {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
+    /* Custom cursor */
+    .cursor {
+      width: 20px; height: 20px;
+      background: radial-gradient(circle, #FFD700, #FF4500);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px #FFD700, 0 0 40px #FF4500;
+      transition: transform 0.1s;
+    }
 
-        /* Image and Headers */
-        .eid-img {
-            font-size: 80px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+    /* Stars background */
+    .stars {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle var(--d, 3s) infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.1; transform: scale(0.8); }
+      to   { opacity: 1;   transform: scale(1.2); }
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(to right, #ffd700, #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+    /* Moon */
+    .moon-wrap {
+      position: fixed; top: 30px; right: 60px;
+      z-index: 1; pointer-events: none;
+    }
+    .moon {
+      width: 90px; height: 90px;
+      background: radial-gradient(circle at 35% 35%, #fff8dc, #FFD700, #FFA500);
+      border-radius: 50%;
+      box-shadow: 0 0 40px #FFD700, 0 0 80px #FFA50088, 0 0 120px #FF8C0044;
+      animation: moonGlow 4s ease-in-out infinite alternate;
+    }
+    @keyframes moonGlow {
+      from { box-shadow: 0 0 40px #FFD700, 0 0 80px #FFA50088; }
+      to   { box-shadow: 0 0 60px #FFD700, 0 0 120px #FFA500cc, 0 0 180px #FF8C0066; }
+    }
 
-        .eid-message {
-            font-size: 1.1rem;
-            color: #d1d1d1;
-            margin-bottom: 25px;
-            line-height: 1.6;
-            font-weight: 400;
-        }
+    /* Fire particles */
+    .fire-container {
+      position: fixed; bottom: 0; left: 0;
+      width: 100%; height: 200px;
+      z-index: 0; pointer-events: none;
+      overflow: hidden;
+    }
+    .flame {
+      position: absolute;
+      bottom: 0;
+      width: 6px; height: 40px;
+      border-radius: 50% 50% 30% 30%;
+      animation: flameUp var(--fd, 2s) ease-in infinite;
+      opacity: 0;
+    }
+    @keyframes flameUp {
+      0%   { transform: translateY(0) scaleX(1); opacity: 0.9; height: 40px; }
+      50%  { transform: translateY(-80px) scaleX(0.7); opacity: 0.6; }
+      100% { transform: translateY(-160px) scaleX(0.3); opacity: 0; height: 10px; }
+    }
 
-        .salami-alert {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff0055, #ffaa00);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
-            border: 2px solid rgba(255,255,255,0.2);
-        }
+    /* Header */
+    header {
+      position: relative; z-index: 10;
+      text-align: center;
+      padding: 60px 20px 40px;
+      overflow: hidden;
+    }
+    .header-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, #FFD70020 0%, transparent 70%);
+    }
 
-        /* Payment Section */
-        .payment-box {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
+    .eid-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a6b2a, #2ecc71, #1a6b2a);
+      border: 2px solid var(--gold);
+      border-radius: 50px;
+      padding: 8px 24px;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px #2ecc7155;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 20px #2ecc7155; }
+      50% { box-shadow: 0 0 40px #2ecc71aa, 0 0 60px #FFD70033; }
+    }
 
-        .pay-item {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 15px 20px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
+    .main-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFD700 0%, #FF8C00 30%, #FFD700 60%, #FFA500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      line-height: 1.1;
+      filter: drop-shadow(0 0 30px #FFD70088);
+      animation: titleShine 3s ease-in-out infinite;
+    }
+    @keyframes titleShine {
+      0%,100% { filter: drop-shadow(0 0 20px #FFD70066); }
+      50% { filter: drop-shadow(0 0 50px #FFD700cc) drop-shadow(0 0 80px #FF450066); }
+    }
 
-        .pay-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
+    .subtitle {
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: var(--gold3);
+      margin: 10px 0;
+      font-weight: 700;
+      text-shadow: 0 0 20px #FF8C00;
+    }
+    .emoji-row {
+      font-size: 2.5rem;
+      margin: 15px 0;
+      animation: bounce 1s ease-in-out infinite alternate;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-8px); }
+    }
 
-        .pay-item.highlight {
-            background: rgba(226, 17, 107, 0.2); /* Bikash Pink */
-            border: 1px solid #e2116b;
-            box-shadow: 0 0 15px rgba(226, 17, 107, 0.4);
-        }
+    /* Divider */
+    .divider {
+      display: flex; align-items: center;
+      gap: 15px; margin: 30px auto;
+      max-width: 700px; padding: 0 20px;
+    }
+    .divider-line {
+      flex: 1; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider-star { color: var(--gold); font-size: 1.5rem; }
 
-        .brand {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
+    /* Eid info section */
+    .info-section {
+      position: relative; z-index: 10;
+      max-width: 850px; margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    .info-card {
+      background: linear-gradient(135deg, #0d1f0a 0%, #0a1505 50%, #0d2010 100%);
+      border: 1px solid var(--gold);
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 40px #FFD70022, inset 0 0 60px #00000044;
+    }
+    .info-card::before {
+      content: '☪';
+      position: absolute; top: -20px; right: 30px;
+      font-size: 8rem; opacity: 0.05; color: var(--gold);
+    }
+    .info-card h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 15px #FFD70088;
+    }
+    .info-card p {
+      color: #d4c5a0;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      text-align: center;
+    }
+    .info-card p strong {
+      color: var(--gold2);
+    }
 
-        .bikash-color { color: #e2116b; text-shadow: 0 0 10px rgba(226,17,107,0.5); }
-        .nogod-color { color: #f58220; }
-        .rocket-color { color: #8c159e; }
-        .upay-color { color: #0066b3; }
-        .binance-color { color: #f3ba2f; }
+    .kaaba-emoji {
+      font-size: 5rem;
+      text-align: center;
+      display: block;
+      margin: 20px 0;
+      filter: drop-shadow(0 0 20px #FFD700);
+      animation: floatKaaba 3s ease-in-out infinite;
+    }
+    @keyframes floatKaaba {
+      0%,100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
 
-        .value {
-            font-weight: 600;
-            color: #fff;
-        }
+    /* Salami section */
+    .salami-section {
+      position: relative; z-index: 10;
+      max-width: 900px; margin: 0 auto 50px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .salami-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      color: var(--fire1);
+      text-shadow: 0 0 20px #FF4500, 0 0 40px #FF6A0088;
+      margin-bottom: 10px;
+    }
+    .salami-sub {
+      color: var(--gold3);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
 
-        .highlight .value {
-            font-size: 1.3rem;
-            color: #ffd700;
-        }
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
 
-        /* Footer Section */
-        .warning {
-            color: #ff4757;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            animation: blink 2s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
+    .payment-card {
+      border-radius: 18px;
+      padding: 28px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .payment-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
 
-        .owner-badge {
-            background: rgba(255, 255, 255, 0.1);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #00e676;
-            margin-bottom: 25px;
-            border: 1px dashed #00e676;
-        }
+    /* Bikash */
+    .card-bikash {
+      background: linear-gradient(135deg, #3a0066, #7b00d4, #e10098);
+      border: 1px solid #e10098;
+      box-shadow: 0 0 30px #e1009844;
+    }
+    .card-bikash:hover { box-shadow: 0 0 60px #e10098aa; }
 
-        .dev-contact {
-            font-size: 0.95rem;
-            color: #a4b0be;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-        }
-        
-        .telegram-id {
-            display: block;
-            margin-top: 8px;
-            color: #00a8ff;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    /* Nogod */
+    .card-nogod {
+      background: linear-gradient(135deg, #001a3a, #003880, #0066cc);
+      border: 1px solid #0088ff88;
+      box-shadow: 0 0 30px #0088ff22;
+    }
 
-        .telegram-id:hover {
-            color: #fff;
-            text-shadow: 0 0 10px #00a8ff;
-        }
-        
-        @media (max-width: 480px) {
-            .pay-item {
-                flex-direction: column;
-                gap: 5px;
-            }
-            h1 { font-size: 2rem; }
-        }
-    </style>
+    /* Rocket */
+    .card-rocket {
+      background: linear-gradient(135deg, #1a0030, #4a0070, #8800cc);
+      border: 1px solid #8800cc88;
+      box-shadow: 0 0 30px #8800cc22;
+    }
+
+    /* Upay */
+    .card-upay {
+      background: linear-gradient(135deg, #1a3000, #2a5a00, #3a8a00);
+      border: 1px solid #4CAF5088;
+      box-shadow: 0 0 30px #4CAF5022;
+    }
+
+    /* Binance */
+    .card-binance {
+      background: linear-gradient(135deg, #1a1200, #3a2800, #6a4800);
+      border: 1px solid #F3BA2F88;
+      box-shadow: 0 0 30px #F3BA2F22;
+    }
+
+    .card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+    }
+    .card-name {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1rem;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+    .card-number {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--gold);
+      text-shadow: 0 0 10px #FFD70088;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      font-family: monospace;
+    }
+    .card-status {
+      font-size: 1.1rem;
+      margin-top: 5px;
+    }
+    .card-unavailable {
+      color: #ff9999;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+    .card-active-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #00c851, #00e676);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      margin-top: 5px;
+      animation: glowBadge 1.5s ease-in-out infinite;
+    }
+    @keyframes glowBadge {
+      0%,100% { box-shadow: 0 0 8px #00c851; }
+      50% { box-shadow: 0 0 20px #00e676; }
+    }
+
+    /* Copy button */
+    .copy-btn {
+      margin-top: 12px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Noto Serif Bengali', serif;
+    }
+    .copy-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+
+    /* Notice box */
+    .notice-box {
+      background: linear-gradient(135deg, #1a0a00, #3a1500);
+      border: 1px solid var(--fire2);
+      border-radius: 15px;
+      padding: 20px 30px;
+      margin: 30px 0;
+      color: #ffccaa;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 0 30px #FF6A0033;
+      line-height: 1.8;
+    }
+    .notice-box .notice-icon { font-size: 1.5rem; margin-right: 8px; }
+
+    /* Owner & Contact Section */
+    .owner-section {
+      position: relative; z-index: 10;
+      max-width: 700px; margin: 0 auto 60px;
+      padding: 0 20px; text-align: center;
+    }
+    .owner-card {
+      background: linear-gradient(135deg, #050a0f, #0a1520, #050f1a);
+      border: 2px solid var(--gold);
+      border-radius: 25px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 60px #FFD70033;
+    }
+    .owner-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, #FFD70015, transparent 60%);
+      pointer-events: none;
+    }
+    .crown { font-size: 3.5rem; display: block; margin-bottom: 10px;
+      animation: crownSpin 5s ease-in-out infinite; filter: drop-shadow(0 0 15px #FFD700); }
+    @keyframes crownSpin {
+      0%,100% { transform: rotate(-5deg) scale(1); }
+      50% { transform: rotate(5deg) scale(1.1); }
+    }
+    .owner-label {
+      color: #aaa; font-size: 0.8rem;
+      letter-spacing: 4px; text-transform: uppercase; margin-bottom: 5px;
+    }
+    .owner-name {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFD700, #FF8C00, #FFD700);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px #FFD70088);
+      margin-bottom: 25px;
+    }
+    .tg-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #0088cc, #00aaff);
+      color: white; text-decoration: none;
+      padding: 14px 30px; border-radius: 50px;
+      font-size: 1.1rem; font-weight: 700;
+      box-shadow: 0 0 30px #0088cc88;
+      transition: all 0.3s;
+      margin-top: 15px;
+    }
+    .tg-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 50px #0088ccaa, 0 10px 30px #00000066;
+    }
+    .tg-icon { font-size: 1.4rem; }
+
+    .service-offer {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      border-top: 1px solid #FFD70033;
+      padding-top: 20px;
+    }
+    .service-offer strong { color: var(--gold2); }
+
+    /* Footer */
+    footer {
+      position: relative; z-index: 10;
+      text-align: center;
+      padding: 30px 20px;
+      color: #554433;
+      font-size: 0.85rem;
+      border-top: 1px solid #FFD70022;
+    }
+    footer span { color: var(--gold3); }
+
+    /* Floating lanterns */
+    .lantern {
+      position: fixed;
+      font-size: 2rem;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatLantern var(--ld, 8s) linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes floatLantern {
+      0%   { transform: translateY(100vh) rotate(-10deg); opacity: 0; }
+      10%  { opacity: 0.7; }
+      90%  { opacity: 0.7; }
+      100% { transform: translateY(-10vh) rotate(10deg); opacity: 0; }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Top ribbon */
+    .top-ribbon {
+      background: linear-gradient(90deg, var(--green), #1a8c30, var(--green));
+      color: var(--gold);
+      text-align: center;
+      padding: 10px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      position: relative; z-index: 20;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    @media (max-width: 500px) {
+      .info-card { padding: 25px 18px; }
+      .owner-card { padding: 30px 18px; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Animated Background -->
-    <div class="bg-shapes">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Moon -->
+<div class="moon-wrap"><div class="moon"></div></div>
+
+<!-- Fire at bottom -->
+<div class="fire-container" id="fire"></div>
+
+<!-- Floating lanterns -->
+<div id="lanterns"></div>
+
+<!-- Top ribbon -->
+<div class="top-ribbon">
+  ☪ ঈদুল আযহা মোবারক ☪ — সকলকে ঈদের শুভেচ্ছা 🌙
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-glow"></div>
+  <div class="eid-badge">🐄 ঈদুল আযহা ২০২৬ 🐄</div>
+  <h1 class="main-title">ঈদ সালামি</h1>
+  <p class="subtitle">🔥 আগুন লাগাইয়া দাও 🔥</p>
+  <div class="emoji-row">🌙✨🕌✨🌙</div>
+</header>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-star">★</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- EID INFO -->
+<section class="info-section reveal">
+  <div class="info-card">
+    <h2>🕌 ঈদুল আযহা কী? 🕌</h2>
+    <span class="kaaba-emoji">🕋</span>
+    <p>
+      <strong>ঈদুল আযহা</strong> — মুসলিম উম্মাহর সবচেয়ে পবিত্র দুটি ঈদের একটি।<br/><br/>
+      এই দিনে হযরত ইব্রাহিম (আ.)-এর মহান ত্যাগের স্মরণে <strong>কুরবানি</strong> দেওয়া হয়।<br/>
+      আল্লাহর সন্তুষ্টির জন্য তিনি তাঁর প্রিয় পুত্র ইসমাঈল (আ.)-কে কুরবানি করতে
+      প্রস্তুত হয়েছিলেন — এই অতুলনীয় ত্যাগের কথা আজও মুসলিমদের হৃদয়ে অমর।<br/><br/>
+      <strong>যিলহজ মাসের ১০ তারিখে</strong> সারা বিশ্বে একসাথে এই উৎসব পালিত হয়।
+      ঈদের নামাজ, কুরবানি, পরিবার আর ভালোবাসায় ভরা এক অনন্য দিন। 🤲
+    </p>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-star">🔥</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- SALAMI SECTION -->
+<section class="salami-section reveal">
+  <h2 class="salami-title">💸 সালামি পাঠাও 💸</h2>
+  <p class="salami-sub">ঈদের সালামি দিয়া মনটা আরও খুশি করে দাও! 🎉</p>
+
+  <div class="notice-box">
+    <span class="notice-icon">❤️</span>
+    <strong>Call করিও না ভাই!</strong> Please ❤️<br/>
+    সালামি পাঠাইলেই মনে রাখুম সারাজীবন 😊
+  </div>
+
+  <div class="payment-grid">
+
+    <!-- BIKASH - Active -->
+    <div class="payment-card card-bikash">
+      <span class="card-icon">💜</span>
+      <div class="card-name">BKASH</div>
+      <div class="card-number">01869512799</div>
+      <span class="card-active-badge">✅ ACTIVE</span>
+      <br/>
+      <button class="copy-btn" onclick="copyNum('01869512799', this)">📋 নাম্বার কপি</button>
     </div>
 
-    <!-- Main Content Box -->
-    <div class="container">
-        <!-- Graphic / Emojis -->
-        <div class="eid-img">🕋 🐄 ✨</div>
-        
-        <h1>ঈদ মোবারক</h1>
-        
-        <p class="eid-message">
-            পবিত্র ঈদুল আযহা বয়ে আনুক অনাবিল আনন্দ আর শান্তি। ত্যাগের মহিমায় উদ্ভাসিত হোক সবার জীবন। সবাইকে ঈদুল আযহার শুভেচ্ছা! ❤️
-        </p>
-
-        <div class="salami-alert">
-            🔥🔥 এইবার সালামি হবে 🔥🔥
-        </div>
-
-        <div class="payment-box">
-            <div class="pay-item highlight">
-                <span class="brand bikash-color">BIKASH</span>
-                <span class="value">01869512799</span>
-            </div>
-            
-            <div class="pay-item">
-                <span class="brand nogod-color">NOGOD</span>
-                <span class="value">NAI 🥲</span>
-            </div>
-
-            <div class="pay-item">
-                <span class="brand rocket-color">ROCKET</span>
-                <span class="value">NAI 🤧</span>
-            </div>
-
-            <div class="pay-item">
-                <span class="brand upay-color">UPAY</span>
-                <span class="value">CINTAI KOIRO NA ZE ASE 🙏</span>
-            </div>
-
-            <div class="pay-item">
-                <span class="brand binance-color">BINANCE</span>
-                <span class="value">ARO NAI 😓</span>
-            </div>
-        </div>
-
-        <div class="warning">
-            Call is not allowed please ❤️
-        </div>
-
-        <div class="owner-badge">
-            OWNER OF SHADIN
-        </div>
-
-        <div class="dev-contact">
-            কারো যদি website এরকম লাগে contract us in Telegram.<br>
-            <a href="https://t.me/DEVILL_COMEBACK" target="_blank" class="telegram-id">Telegram Id : @DEVILL_COMEBACK</a>
-        </div>
+    <!-- NOGOD -->
+    <div class="payment-card card-nogod">
+      <span class="card-icon">🔵</span>
+      <div class="card-name">NAGAD</div>
+      <div class="card-status">🥲</div>
+      <div class="card-unavailable">নাই ভাই... নাই<br/>একদিন হবে ইনশাআল্লাহ!</div>
     </div>
 
+    <!-- ROCKET -->
+    <div class="payment-card card-rocket">
+      <span class="card-icon">🚀</span>
+      <div class="card-name">ROCKET</div>
+      <div class="card-status">🤧</div>
+      <div class="card-unavailable">এইটাও নাই ভাই<br/>মাফ কইরেন!</div>
+    </div>
+
+    <!-- UPAY -->
+    <div class="payment-card card-upay">
+      <span class="card-icon">💚</span>
+      <div class="card-name">UPAY</div>
+      <div class="card-status">🙏</div>
+      <div class="card-unavailable">চিন্তাই করো না<br/>যা আছে তাই নিয়া আছি!</div>
+    </div>
+
+    <!-- BINANCE -->
+    <div class="payment-card card-binance">
+      <span class="card-icon">🟡</span>
+      <div class="card-name">BINANCE</div>
+      <div class="card-status">😓</div>
+      <div class="card-unavailable">আরো নাই ভাই...<br/>Crypto নাই জীবনে!</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DIVIDER -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-star">👑</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- OWNER SECTION -->
+<section class="owner-section reveal">
+  <div class="owner-card">
+    <span class="crown">👑</span>
+    <div class="owner-label">— POWERED BY —</div>
+    <div class="owner-name">SHADIN</div>
+
+    <div class="service-offer">
+      তোমার কি এরকম <strong>🔥 আগুন Website</strong> লাগবে?<br/>
+      তাইলে আর দেরি না করে এখনই যোগাযোগ করো!<br/>
+      <strong>Custom Design • Fast Delivery • Full Support</strong>
+    </div>
+
+    <a href="https://t.me/DEVILL_COMEBACK" target="_blank" class="tg-btn">
+      <span class="tg-icon">✈️</span>
+      @DEVILL_COMEBACK
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>🌙 ঈদুল আযহা ২০২৬ | Made with ❤️ by <span>SHADIN</span></p>
+  <p style="margin-top:6px">সকলের ঈদ হোক আনন্দময় 🎉</p>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  // Stars
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      width:${size}px; height:${size}px;
+      --d:${(Math.random()*3+1).toFixed(1)}s;
+      animation-delay:${(Math.random()*3).toFixed(1)}s
+    `;
+    starsEl.appendChild(s);
+  }
+
+  // Fire flames
+  const fireEl = document.getElementById('fire');
+  const colors = [
+    'linear-gradient(to top, #FF4500, #FF6A00, #FFB347)',
+    'linear-gradient(to top, #FF6A00, #FFD700, #FF8C00)',
+    'linear-gradient(to top, #FF0000, #FF4500, #FF6A00)',
+  ];
+  for (let i = 0; i < 60; i++) {
+    const f = document.createElement('div');
+    f.className = 'flame';
+    const h = Math.random() * 80 + 30;
+    f.style.cssText = `
+      left:${Math.random()*100}%;
+      height:${h}px;
+      background:${colors[Math.floor(Math.random()*3)]};
+      --fd:${(Math.random()*2+1).5}s;
+      animation-delay:${(Math.random()*3).toFixed(2)}s;
+      width:${Math.random()*10+4}px;
+    `;
+    fireEl.appendChild(f);
+  }
+
+  // Lanterns
+  const lanternEl = document.getElementById('lanterns');
+  const lEmojis = ['🏮','🌟','⭐','✨','💫','🌙'];
+  for (let i = 0; i < 12; i++) {
+    const l = document.createElement('div');
+    l.className = 'lantern';
+    l.textContent = lEmojis[Math.floor(Math.random()*lEmojis.length)];
+    l.style.cssText = `
+      left:${Math.random()*100}%;
+      --ld:${(Math.random()*8+6).toFixed(1)}s;
+      animation-delay:${(Math.random()*8).toFixed(1)}s;
+    `;
+    lanternEl.appendChild(l);
+  }
+
+  // Copy number
+  function copyNum(num, btn) {
+    navigator.clipboard.writeText(num).then(() => {
+      btn.textContent = '✅ কপি হইছে!';
+      setTimeout(() => btn.textContent = '📋 নাম্বার কপি', 2000);
+    });
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(r => observer.observe(r));
+</script>
 </body>
 </html>
