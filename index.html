@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Salami - OWNER OF SHADIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        /* Animated Background Elements */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .shape {
+            position: absolute;
+            filter: blur(50px);
+            opacity: 0.5;
+            animation: float 6s infinite ease-in-out;
+        }
+        .shape1 { background: #ff007f; width: 300px; height: 300px; top: -100px; left: -100px; border-radius: 50%; }
+        .shape2 { background: #7928ca; width: 400px; height: 400px; bottom: -150px; right: -100px; border-radius: 50%; animation-delay: 2s; }
+        .shape3 { background: #ffaa00; width: 200px; height: 200px; top: 40%; left: 50%; border-radius: 50%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: popup 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popup {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Image and Headers */
+        .eid-img {
+            font-size: 80px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .eid-message {
+            font-size: 1.1rem;
+            color: #d1d1d1;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .salami-alert {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff0055, #ffaa00);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        /* Payment Section */
+        .payment-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .pay-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .pay-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .pay-item.highlight {
+            background: rgba(226, 17, 107, 0.2); /* Bikash Pink */
+            border: 1px solid #e2116b;
+            box-shadow: 0 0 15px rgba(226, 17, 107, 0.4);
+        }
+
+        .brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .bikash-color { color: #e2116b; text-shadow: 0 0 10px rgba(226,17,107,0.5); }
+        .nogod-color { color: #f58220; }
+        .rocket-color { color: #8c159e; }
+        .upay-color { color: #0066b3; }
+        .binance-color { color: #f3ba2f; }
+
+        .value {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .highlight .value {
+            font-size: 1.3rem;
+            color: #ffd700;
+        }
+
+        /* Footer Section */
+        .warning {
+            color: #ff4757;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .owner-badge {
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #00e676;
+            margin-bottom: 25px;
+            border: 1px dashed #00e676;
+        }
+
+        .dev-contact {
+            font-size: 0.95rem;
+            color: #a4b0be;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        
+        .telegram-id {
+            display: block;
+            margin-top: 8px;
+            color: #00a8ff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .telegram-id:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #00a8ff;
+        }
+        
+        @media (max-width: 480px) {
+            .pay-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <!-- Main Content Box -->
+    <div class="container">
+        <!-- Graphic / Emojis -->
+        <div class="eid-img">🕋 🐄 ✨</div>
+        
+        <h1>ঈদ মোবারক</h1>
+        
+        <p class="eid-message">
+            পবিত্র ঈদুল আযহা বয়ে আনুক অনাবিল আনন্দ আর শান্তি। ত্যাগের মহিমায় উদ্ভাসিত হোক সবার জীবন। সবাইকে ঈদুল আযহার শুভেচ্ছা! ❤️
+        </p>
+
+        <div class="salami-alert">
+            🔥🔥 এইবার সালামি হবে 🔥🔥
+        </div>
+
+        <div class="payment-box">
+            <div class="pay-item highlight">
+                <span class="brand bikash-color">BIKASH</span>
+                <span class="value">01869512799</span>
+            </div>
+            
+            <div class="pay-item">
+                <span class="brand nogod-color">NOGOD</span>
+                <span class="value">NAI 🥲</span>
+            </div>
+
+            <div class="pay-item">
+                <span class="brand rocket-color">ROCKET</span>
+                <span class="value">NAI 🤧</span>
+            </div>
+
+            <div class="pay-item">
+                <span class="brand upay-color">UPAY</span>
+                <span class="value">CINTAI KOIRO NA ZE ASE 🙏</span>
+            </div>
+
+            <div class="pay-item">
+                <span class="brand binance-color">BINANCE</span>
+                <span class="value">ARO NAI 😓</span>
+            </div>
+        </div>
+
+        <div class="warning">
+            Call is not allowed please ❤️
+        </div>
+
+        <div class="owner-badge">
+            OWNER OF SHADIN
+        </div>
+
+        <div class="dev-contact">
+            কারো যদি website এরকম লাগে contract us in Telegram.<br>
+            <a href="https://t.me/DEVILL_COMEBACK" target="_blank" class="telegram-id">Telegram Id : @DEVILL_COMEBACK</a>
+        </div>
+    </div>
+
+</body>
+</html>
